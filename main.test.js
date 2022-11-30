@@ -3,6 +3,7 @@ const capitalize = require('./capitalize');
 const reverseString = require('./reverseString');
 const calculator = require('./calculator');
 const caesarCipher = require('./caesarCipher');
+const analyzeArray = require('./analyzeArray');
 
 
 test('adds 1 + 2 to equal 3', () => {
@@ -67,4 +68,18 @@ test('cipher "abcdefghijlkmnopqrstuvwxyz" to "ghijklmnoprqstuvwxyzabcdef"', () =
 
 test('cipher "YOU. SHALL. NOT. PASS!!!" to "EUA. YNGRR. TUZ. VGYY!!!"', () => {
     expect(caesarCipher('YOU. SHALL. NOT. PASS!!!')).toBe('EUA. YNGRR. TUZ. VGYY!!!');
+});
+
+//analyzeArray
+
+test('array [1, 2, 3, 4, 5]', () => {
+    expect(analyzeArray([1, 2, 3, 4, 5])).toEqual({average: 3, min: 1, max: 5, length: 5});
+});
+
+test('array [0, 0, 0, 0, 0]', () => {
+    expect(analyzeArray([0, 0, 0, 0, 0])).toEqual({average: 0, min: 0, max: 0, length: 5});
+});
+
+test('array [68, 18, 14, 10, 12, 6, 2, 2, 8, 10]', () => {
+    expect(analyzeArray([68, 18, 14, 10, 12, 6, 2, 2, 8, 10])).toEqual({average: 15, min: 2, max: 68, length: 10});
 });
