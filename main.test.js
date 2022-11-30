@@ -2,6 +2,7 @@ const main = require('./main');
 const capitalize = require('./capitalize');
 const reverseString = require('./reverseString');
 const calculator = require('./calculator');
+const caesarCipher = require('./caesarCipher');
 
 
 test('adds 1 + 2 to equal 3', () => {
@@ -52,4 +53,18 @@ test('multiply 18 by 13 and returns 234"', () => {
 
 test('divide 18 by 13 and returns 1"', () => {
     expect(calculator.divide(18,13)).toBeCloseTo(1.384);
+});
+
+//caesarCipher
+
+test('cipher "Hello World!" to "Nkrru Cuxrj!"', () => {
+    expect(caesarCipher('Hello World!')).toBe('Nkrru Cuxrj!');
+});
+
+test('cipher "abcdefghijlkmnopqrstuvwxyz" to "ghijklmnoprqstuvwxyzabcdef"', () => {
+    expect(caesarCipher('abcdefghijlkmnopqrstuvwxyz')).toBe('ghijklmnoprqstuvwxyzabcdef');
+});
+
+test('cipher "YOU. SHALL. NOT. PASS!!!" to "EUA. YNGRR. TUZ. VGYY!!!"', () => {
+    expect(caesarCipher('YOU. SHALL. NOT. PASS!!!')).toBe('EUA. YNGRR. TUZ. VGYY!!!');
 });
